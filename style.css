@@ -216,12 +216,114 @@ body.dark .tab-btn.active {
   display: inline-block;
   margin: 20px 0;
   padding: 10px 20px;
-  background-color: #4a90e2;
+  background-color: #4a90e2; /* Light mode background */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.resume-download:hover {
+  background-color: #357ABD;
+}
+
+body.dark .resume-download {
+  background-color: #222; /* Dark mode background */
+  color: #fdfdfd;
+}
+body.dark .resume-download:hover {
+  background-color: #444;
+}
+
+body.dark .resume-download {
+  border: 1px solid #888;
+  box-shadow: 0 0 8px rgba(255,255,255,0.1);
+}
+
+.skills-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: left;
+  padding: 40px;
+}
+
+.skills-text {
+  max-width: 400px;
+}
+
+.skills-photo {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+  .skills-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skills-text {
+    text-align: center;
+  }
+}
+
+.three-column-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 40px;
+  text-align: left;
+}
+
+.left-text, .right-text {
+  max-width: 300px;
+}
+
+.center-image img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.banner {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to right, #4a90e2, #6dd5ed);
+  color: white;
+}
+
+.banner h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 12px 24px;
+  background-color: white;
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.github-button {
+  padding: 10px 20px;
+  background-color: #333;
   color: white;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
 }
-.resume-download:hover {
-  background-color: #357ABD;
+.github-button:hover {
+  background-color: #555;
 }
