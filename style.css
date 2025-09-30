@@ -327,3 +327,45 @@ body.dark .resume-download {
 .github-button:hover {
   background-color: #555;
 }
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 40px;
+  border-left: 3px solid #4a90e2;
+}
+
+.timeline-date {
+  position: absolute;
+  left: -80px;
+  top: 0;
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+.timeline-content h3 {
+  margin: 0 0 10px;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #555;
+}
+
+body.dark .timeline-item {
+  border-left-color: #888;
+}
+
+body.dark .timeline-date {
+  color: #ccc;
+}
+
+body.dark .timeline-content p {
+  color: #ddd;
+}
