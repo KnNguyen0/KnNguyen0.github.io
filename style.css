@@ -6,11 +6,43 @@ body {
   color: #333;
   background-color: #fdfdfd;
 }
+/* The container for the right side ofthe png if it works lol */
+.about-container {
+  display: flex;
+  justify-content: center;     /* centers horizontally */
+  align-items: center;         /* centers vertically */
+  gap: 40px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.profile-wrapper {
+  flex-shrink: 0;
+}
+
 .profile {
-  width: 150px;
+  width: 200px;
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+.about-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}
+
 /* Light mode (default) */
 body {
   background-color: #fdfdfd;
@@ -91,3 +123,38 @@ body.dark .project-card:hover {
     padding: 20px;
   }
 }
+.tab-buttons {
+  display: block;
+  text-align: center;
+}
+.tab-btn {
+  margin: 5px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tab-btn.active {
+  background: #ff6f61;
+  color: white;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+.tab-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
