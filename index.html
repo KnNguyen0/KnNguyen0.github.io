@@ -6,34 +6,68 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<div class="tabs">
+<div class="tabs-header">
   <div class="tab-buttons">
     <button class="tab-btn active" data-tab="about">About Me</button>
     <button class="tab-btn" data-tab="projects">Projects</button>
     <button class="tab-btn" data-tab="contact">Contact</button>
+    <button class="tab-btn" data-tab="resume">resume</button>
   </div>
-
-  <div class="tab-content active" id="about">
-    <h2>About Me</h2>
-    <p>I blend design, code, and curiosity to build meaningful digital experiences.</p>
-  </div>
-
-  <div class="tab-content" id="projects">
-    <h2>Projects</h2>
-    <p>Here are some things I've built recently.</p>
-  </div>
-
-  <div class="tab-content" id="contact">
-    <h2>Contact</h2>
-    <p>Email me at <a href="mailto:you@example.com">you@example.com</a></p>
-  </div>
+  <button id="theme-toggle">🌙</button>
 </div>
+<div class="tab-content active" id="about">
+  <h2>About Me</h2>
+  <p>I blend design, code, and curiosity to build meaningful digital experiences.</p>
+</div>
+<div class="tab-content" id="projects">
+  <h2>Projects</h2>
+  <p>Here are some things I've built recently.</p>
+</div>
+<div class="tab-content" id="contact">
+  <h2>Contact</h2>
+  <p>Email me at <a href="mailto:you@example.com">you@example.com</a></p>
+</div>
+<div class="tab-content" id="resume">
+  <h2>My Resume</h2>
+  <p>You can view or download my resume below:</p>
+  <a href="resume.pdf" download class="resume-download">⬇️ Download Resume (PDF)</a>
+  <iframe src="resume.pdf" width="100%" height="500px" style="border: none;"></iframe>
+</div>
+<script>
+  // Tabs
+  const buttons = document.querySelectorAll('.tab-btn');
+  const contents = document.querySelectorAll('.tab-content');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Dark Mode Toggle
+  //const toggle = document.getElementById('theme-toggle');
+  //const body = document.body;
+
+  // Load saved theme
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggle.textContent = '☀️';
+  }
+
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const isDark = body.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    toggle.textContent = isDark ? '☀️' : '🌙';
+  });
+</script>
 
 </body>
 </html>
 <script>
-  const buttons = document.querySelectorAll('.tab-btn');
-  const contents = document.querySelectorAll('.tab-content');
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -69,7 +103,7 @@
   <div class="about-container">
     <img src="headshot.jpg" alt="Your Name" class="profile">
     <div class="about-text">
-      <h2>About Me</h2>
+      <h2>Favorite things </h2>
       <p>I blend design, code, and curiosity to build meaningful digital experiences.</p>
       <ul>
         <li>🎨 I sketch ideas before I code them</li>
@@ -80,14 +114,15 @@
   </div>
 </section>
   </section>
-  <button id="theme-toggle">🌙 Toggle Dark Mode</button>
+  <!--<button id="theme-toggle"></button> -->
       <script>
         const toggle = document.getElementById('theme-toggle');
         toggle.addEventListener('click', () => {
           document.body.classList.toggle('dark');
         });
       </script>
-    </header>
+  <!-- This was 3 bullet points on the side of the left screen that had them have a hyperlink
+  </header>
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
@@ -95,6 +130,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+    -->
       <!--
     <section class="about section">
       <h2>About Me</h2>
